@@ -1,0 +1,20 @@
+<div >
+    <div class="text-center card mb-2 bg-dark text-center">
+      
+        <!--por que el [] en src, es porque enlaza un atributo htmlcon la lista de gifs que está en typescript?-->
+        <!--Cuando le quiero decir a Angular que el valor de un atributo es codigo typescript, simplemente encierro el atributo con [], si no tambien podria no encerrarlo y poner la expresion ts entre {{}}-->
+
+
+        <!-- <img [src]="gif.images.downsized_medium.url" [alt]="gif.title"> -->
+
+        <shared-lazy-image
+        [url]="gif.images.downsized_medium.url"
+        [alt]="gif.title"
+        ></shared-lazy-image>
+      
+
+      <div class="card-body text-white">
+        <p class="card-text">{{gif.title || "No title"}}</p>
+      </div>
+    </div>
+  </div>

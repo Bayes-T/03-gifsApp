@@ -1,16 +1,13 @@
 <!--El ngfor en la clase col-md-3 col-sm6 porque lo que voy a duplicar no es un elemento, sino un grupo de elementos que va en cierta cantidad de columnas-->
 <div class="row">
-  <div *ngFor="let gif of gifsList" class="col-md-3 col-sm-6">
-    <div class="text-center card mb-2 bg-dark">
-      
-        <!--por que el [] en src, es porque enlaza un atributo htmlcon la lista de gifs que está en typescript?-->
-        <!--Cuando le quiero decir a Angular que el valor de un atributo es codigo typescript, simplemente encierro el atributo con [], si no tambien podria no encerrarlo y poner la expresion ts entre {{}}-->
-        <img [src]="gif.images.downsized_medium.url" [alt]="gif.title">
-      
 
-      <div class="card-body text-white">
-        <p class="card-text">{{gif.title}}</p>
-      </div>
-    </div>
-  </div>
+  <gifs-card 
+  *ngFor="let gif of gifsList; let i = index"
+  [gif]="gif"
+  class="col-md-3 col-sm-6">
+
+  </gifs-card>
 </div>
+
+
+

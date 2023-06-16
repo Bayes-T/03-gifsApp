@@ -1,0 +1,19 @@
+<div class="d-flex justify-content-center">
+<img
+class="card-img-top"
+[src]="url"
+[alt]="alt"
+(load)="onLoad()"
+
+[ngStyle]="{display: hasLoaded ? '' : 'none'}"
+>
+<!--el NGSTYLE lo puedo usar en este caso como un ngif, no uso ngif porque necesito que la imagen se construya-->
+<!--El display en none oculta la imagen, el display en '' muestra la imagen, por lo tanto lo que hace es que si el hasloaded esta en true, muestra la imagen y si no, no muestra la imagen. Es para no mostrar las dos cosas juntas, el loader y la imagen. Pasa muy rapido-->
+
+
+<img class=" animate__animated animate__zoomOut"
+*ngIf="hasLoaded == false"
+src="assets/loader.svg"
+>
+
+</div>
